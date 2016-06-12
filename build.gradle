@@ -1,0 +1,23 @@
+allprojects {
+  apply plugin: 'scala'
+  apply plugin: 'idea'
+
+  repositories {
+    maven {
+      url "https://maven.twttr.com"
+    }
+    mavenCentral()
+  }
+  // In this section you declare the dependencies for your production and test code
+  dependencies {
+      // We use Scala 2.11 in our library project
+      compile 'org.scala-lang:scala-library:2.11.7'
+      compile 'com.twitter:finagle-http_2.11:6.35.0:'
+    
+      // We use Scalatest for testing our library
+      testCompile 'junit:junit:4.12'
+      testCompile 'org.scalatest:scalatest_2.11:2.2.5'
+      testRuntime 'org.scala-lang.modules:scala-xml_2.11:1.0.4'
+  }
+}
+
